@@ -1,0 +1,72 @@
+#include <iostream>
+using namespace std;
+class books
+{
+string author,title,publisher;
+float price;
+int stock;
+public:
+void input()
+{
+cout<<"Enter the name of the author"<<endl;
+cin>>author;
+cout<<"Enter the title of the book"<<endl;
+cin>>title;
+cout<<"Enter the name of the publisher"<<endl;
+cin>>publisher;
+cout<<"Enter the price of the book"<<endl;
+cin>>price;
+cout<<"Enter the stock"<<endl;
+cin>>stock;
+}
+void enter(books a,books b,books c)
+{
+string n;
+int m;
+cout<<"Enter the name of the author";
+cin>>n;
+if(n == a.author)
+{
+cout<<"Book is available"<<endl<<n;
+cout<<"Enter the no. of copies needed"<<endl;
+cin>>m;
+if(m<=a.stock)
+cout<<"Total price for the book is :"<<endl<<a.price * m;
+else
+cout<<"stock is low"<<endl;
+}
+else if(n == b.author)
+{
+cout<<"Book is available"<<endl<<n;
+cout<<"Enter the no. of copies needed"<<endl; 
+cin>>m;
+if(m<=b.stock)
+cout<<"Total price for the book is :"<<endl<<b.price * m;
+else
+cout<<"stock is low"<<endl;
+}
+else if(n ==c.author)
+{
+cout<<"Book is available"<<endl<<n;
+cout<<"Enter the no. of copies needed"<<endl;
+cin>>m;
+if(m<=c.stock)
+cout<<"Total price for the book is :"<<endl<<c.price * m;
+else
+cout<<"stock is low"<<endl;
+}
+else
+cout<<"book is not available"<<endl;
+}
+
+};
+int main()
+{
+books b1,b2,b3,needed;
+b1.input();
+b2.input();
+b3.input();
+needed.enter(b1,b2,b3);
+
+return 0;
+} 
